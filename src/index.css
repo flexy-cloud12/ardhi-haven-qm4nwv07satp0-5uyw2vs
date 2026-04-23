@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    /* ArDhiflex Premium Palette */
+    --background: 0 0% 100%;
+    --foreground: 153 42% 12%; /* Dark Forest Green derivative */
+    --primary: 153 42% 18%; /* #1B4332 */
+    --primary-foreground: 43 51% 94%; /* Sand Light */
+    --muted: 43 45% 96%;
+    --muted-foreground: 153 10% 40%;
+    --border: 153 10% 90%;
+    --ring: 153 42% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 153 42% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 153 42% 12%;
+    --secondary: 43 45% 92%; /* Light Sand */
+    --secondary-foreground: 153 42% 18%;
+    --accent: 43 52% 65%; /* #D4A373 Sand */
+    --accent-foreground: 153 42% 18%;
+    --destructive: 12 65% 62%; /* #E07A5F Terracotta */
+    --destructive-foreground: 0 0% 98%;
+    --input: 153 10% 88%;
+    --radius: 1rem;
+    --sidebar-background: 153 42% 5%;
+    --sidebar-foreground: 43 45% 90%;
+    --sidebar-primary: 43 52% 65%;
+    --sidebar-primary-foreground: 153 42% 18%;
+  }
+  .dark {
+    --background: 153 42% 4%;
+    --foreground: 43 45% 95%;
+    --primary: 43 52% 65%;
+    --primary-foreground: 153 42% 10%;
+    --muted: 153 30% 12%;
+    --muted-foreground: 43 20% 70%;
+    --border: 153 30% 15%;
+    --ring: 43 52% 65%;
+    --card: 153 40% 6%;
+    --card-foreground: 43 45% 95%;
+    --popover: 153 40% 6%;
+    --popover-foreground: 43 45% 95%;
+    --secondary: 153 30% 12%;
+    --secondary-foreground: 43 52% 65%;
+    --accent: 12 65% 62%;
+    --accent-foreground: 0 0% 100%;
+    --input: 153 30% 15%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+@layer components {
+  .btn-gradient {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-bold transition-all duration-300 text-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95;
+    background: linear-gradient(135deg, #1B4332 0%, #2D5A47 100%);
+  }
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #1B4332 0%, #D4A373 100%);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #1B4332 0%, #D4A373 50%, #E07A5F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .text-display {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight;
+  }
+}
